@@ -3,7 +3,7 @@ import yt_dlp
 def get_streams(video_url):
     ydl_opts = {
         'quiet': True,
-        'cookiefile': "/config/yt.txt"
+        'cookiefile': "/etc/secrets/yt.txt"
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as yt:
