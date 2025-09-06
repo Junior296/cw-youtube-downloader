@@ -2,9 +2,18 @@ import yt_dlp
 
 def get_streams(video_url):
     ydl_opts = {
-        'quiet': True,
-        'cookiefile': "/etc/secrets/yt.txt"
-    }
+    "quiet": True,
+    "cookiefile": "/etc/secrets/yt.txt",
+    "cachedir": False,    # disables writing cache
+    "noprogress": True,
+    "no_warnings": True,
+    "ignoreerrors": True,
+    "simulate": True,     # no download if you just want info
+    # IMPORTANT: disable cookie saving
+    "writethumbnail": False,
+    "writesubtitles": False,
+}
+
 
     with yt_dlp.YoutubeDL(ydl_opts) as yt:
         info = yt.extract_info(video_url, download=False)
