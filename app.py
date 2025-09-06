@@ -32,7 +32,7 @@ def get_video_streams():
         title, audios, muxed, videos = get_streams(video_url)
         return jsonify({"title": title, "audios": audios, "videos": videos})
     except Exception as e:
-        return jsonify({"error": e})
+        return jsonify({"error": str(e)})
     
 
 if __name__ == "__main__":
